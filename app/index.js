@@ -25,7 +25,7 @@ const requestListener = function (req, res) {
         openSafari(searchUrl, params.get('browser'));
     }
     res.writeHead(200);
-    res.end('safari was opened');
+    res.end('browser was opened');
 };
 
 const server = http.createServer(requestListener);
