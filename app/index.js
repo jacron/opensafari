@@ -1,32 +1,26 @@
 const http = require('http');
-const { exec } = require('child_process');
 const config = require('../config');
-
-const browsers = {
-    safari: 'Safari.app',
-    firefox: 'Firefox.app'
-};
-
-function openSafari(url, browser) {
-    if (!browser) { browser = 'safari'; }
-    const cmd = `open -a ${browsers[browser]} ${url}`;
-    exec(cmd, err => {
-        if (err) {
-            console.error(err);
-        }
-    })
-}
+const openTheJar = require("./aboregie");
+const openBrowser = require('./browser');
 
 const requestListener = function (req, res) {
     const url = new URL(req.url, 'http://' + req.headers.host);
     const params = url.searchParams;
     const searchUrl = params.get('url');
-    if (searchUrl) {
-        openSafari(searchUrl, params.get('browser'));
+    const browser = params.get('browser');
+    let msg = 'nothing to do';
+    if (browser === 'aboregie') {
+        openTheJar(searchUrl);
+        msg = 'opened aboregie';
+    }
+    else if (searchUrl) {
+        openBrowser(searchUrl, browser);
+        msg = 'opened ' + browser;
     }
     res.writeHead(200);
-    res.end('browser was opened');
+    res.end('opensafari: ' + msg);
 };
 
 const server = http.createServer(requestListener);
+console.log('Listening on http://localhost:' + config.port);
 server.listen(config.port);
