@@ -1,3 +1,8 @@
+/**
+ * The smallest api-server on earth.
+ *
+ * @type {module:http}
+ */
 const http = require('http');
 const config = require('../config');
 const openTheJar = require("./aboregie");
