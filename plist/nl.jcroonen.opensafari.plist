@@ -5,7 +5,7 @@
 	<key>Label</key>
 	<string>nl.jcroonen.opensafari</string>
 	<key>WorkingDirectory</key>
-	<string>/Users/orion/IdeaProjects/opensafari</string>
+	<string>/Users/orion/Dev/node/opensafari</string>
 	<key>ProgramArguments</key>
 	<array>
 		<string>/Users/orion/.nvm/versions/node/v12.12.0/bin/node</string>

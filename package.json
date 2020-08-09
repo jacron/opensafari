@@ -5,6 +5,7 @@
   "main": "app/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "pcopy": "cp plist/nl.jcroonen.opensafari.plist ~/Library/LaunchAgents",
     "pstart": "launchctl start nl.jcroonen.dashboard",
     "pstop": "launchctl stop nl.jcroonen.dashboard",
     "plist": "lauchctl list | grep jcroonen"
