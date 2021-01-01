@@ -1,3 +1,5 @@
+const home = require('os').homedir();
+
 module.exports = {
     port: 3015,
     appTitle: 'open safari',
@@ -7,7 +9,7 @@ module.exports = {
         edge: 'Microsoft Edge.app'
     },
     aboregie: {
-        jar: '/Users/orion/appdocs/AboRegieFx2/out/artifacts/AboRegieFx2/archive.jar',
+        jar: home + '/Dev/java/javafx/AboRegieFx2/out/artifacts/AboRegieFx2/archive.jar',
         java: '/Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home/bin/java'
     }
 };
